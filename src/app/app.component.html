@@ -1,0 +1,18 @@
+<app-header></app-header>
+<!-- <app-authenticate [title]="title"></app-authenticate> -->
+<!-- <div class="container" [style.background-color]="currentState.color"> -->
+<div class="container" [ngStyle]="{'backgroundColor':currentState.color}">
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <h2>Started</h2>
+    </div>
+  </div> -->
+  <div calss="row">
+    <div class="col-md-5">
+      <app-authenticate [state]="currentState" (changeState)="updateUserState($event)"></app-authenticate>
+    </div>
+    <div class="col-md-7">
+      <app-details [idToken]="currentState.idToken"></app-details>
+    </div>
+  </div>
+</div>

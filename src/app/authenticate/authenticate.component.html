@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-12">
+        
+        <div *ngIf="state.authenticated; else elseBlock">
+            <h3>Logged In</h3>
+            <hr/>
+            <button (click)="logout()">Logout</button>
+        </div>
+        <ng-template #elseBlock><div>
+            <h3>Logged Out</h3>
+            <hr/>
+            <input #email email.value=''>
+            <br/>
+            <button (click)="checkEmailDomain(email.value)">Login</button>
+            <div *ngIf="domainError"><h4>No Tenant Registered for your Mail Domain</h4></div>
+        </div></ng-template>
+        
+        <!-- <a [href]="authType.url" 
+            class="left-group-item clearfix"
+            *ngFor="let authType of authTypes">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ authType.name }}</h4>
+            </div>
+        </a> -->
+        
+    </div>
+</div>

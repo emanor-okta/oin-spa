@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div *ngIf="detailLines.length > 0; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><h3>Authentication Line Items</h3></ng-template>
+        <ng-template #elseBlock><h3>Not Autheticated</h3></ng-template>
+        <hr/>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <!-- <a [href]="authType.url" 
+            class="left-group-item clearfix"
+            *ngFor="let authType of authTypes"> -->
+            <!-- <li class="pull-left" *ngFor="let detail of detailLines"> -->
+            <div class="left-group-item clearfix" *ngFor="let detail of detailLines">
+                <em class="list-group-item-heading">{{ detail.description }}: </em>{{ detail.data }}
+                <!-- <p>{{ detail.data }}</p> -->
+            </div>
+        <!-- </a> -->
+    </div>
+</div>
